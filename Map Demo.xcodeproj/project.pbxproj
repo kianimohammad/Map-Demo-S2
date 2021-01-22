@@ -13,6 +13,8 @@
 		1CB1060425B9F8D5006E164D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CB1060225B9F8D5006E164D /* Main.storyboard */; };
 		1CB1060625B9F8D7006E164D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CB1060525B9F8D7006E164D /* Assets.xcassets */; };
 		1CB1060925B9F8D7006E164D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CB1060725B9F8D7006E164D /* LaunchScreen.storyboard */; };
+		1CB1061325B9FA40006E164D /* Places.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CB1061125B9FA40006E164D /* Places.plist */; };
+		1CB1061425B9FA40006E164D /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB1061225B9FA40006E164D /* Place.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		1CB1060525B9F8D7006E164D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1CB1060825B9F8D7006E164D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1CB1060A25B9F8D7006E164D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1CB1061125B9FA40006E164D /* Places.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Places.plist; sourceTree = "<group>"; };
+		1CB1061225B9FA40006E164D /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 				1CB1060225B9F8D5006E164D /* Main.storyboard */,
 				1CB1060525B9F8D7006E164D /* Assets.xcassets */,
 				1CB1060725B9F8D7006E164D /* LaunchScreen.storyboard */,
+				1CB1061225B9FA40006E164D /* Place.swift */,
+				1CB1061125B9FA40006E164D /* Places.plist */,
 				1CB1060A25B9F8D7006E164D /* Info.plist */,
 			);
 			path = "Map Demo";
@@ -126,6 +132,7 @@
 			files = (
 				1CB1060925B9F8D7006E164D /* LaunchScreen.storyboard in Resources */,
 				1CB1060625B9F8D7006E164D /* Assets.xcassets in Resources */,
+				1CB1061325B9FA40006E164D /* Places.plist in Resources */,
 				1CB1060425B9F8D5006E164D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,6 +147,7 @@
 				1CB1060125B9F8D5006E164D /* ViewController.swift in Sources */,
 				1CB105FD25B9F8D5006E164D /* AppDelegate.swift in Sources */,
 				1CB105FF25B9F8D5006E164D /* SceneDelegate.swift in Sources */,
+				1CB1061425B9FA40006E164D /* Place.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
