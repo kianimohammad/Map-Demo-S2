@@ -246,7 +246,7 @@ extension ViewController: MKMapViewDelegate {
     
     //MARK: - callout accessory control tapped
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        let alertController = UIAlertController(title: "Your Location", message: "A nice place to visit", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Your Favorite", message: "A nice place to visit", preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
         present(alertController, animated: true, completion: nil)
