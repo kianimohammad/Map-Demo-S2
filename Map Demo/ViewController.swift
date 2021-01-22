@@ -116,7 +116,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let latitude = userLocation.coordinate.latitude
         let longitude = userLocation.coordinate.longitude
         
-        displayLocation(latitude: latitude, longitude: longitude, title: "You are here", subtitle: "")
+        displayLocation(latitude: latitude, longitude: longitude, title: "my location", subtitle: "you are here")
     }
     
     //MARK: - add annotations for the places
@@ -157,7 +157,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let touchPoint = sender.location(in: map)
         let coordinate = map.convert(touchPoint, toCoordinateFrom: map)
         let annotation = MKPointAnnotation()
-        annotation.title = "My destination"
+        annotation.title = "my destination"
         annotation.coordinate = coordinate
         map.addAnnotation(annotation)
         
@@ -172,7 +172,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         // add annotation for the coordinatet
         let annotation = MKPointAnnotation()
-        annotation.title = "My favorite"
+        annotation.title = "my favorite"
         annotation.coordinate = coordinate
         map.addAnnotation(annotation)
     }
@@ -223,20 +223,25 @@ extension ViewController: MKMapViewDelegate {
             return nil
         }
         
-//        let pinAnnotation = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "droppablePin")
-//        pinAnnotation.animatesDrop = true
-//        pinAnnotation.pinTintColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
-        // add custom annotation
-        let pinAnnotation = map.dequeueReusableAnnotationView(withIdentifier: "droppablePin") ?? MKPinAnnotationView()
-        pinAnnotation.image = UIImage(named: "ic_place_2x")
-        pinAnnotation.canShowCallout = true
-        pinAnnotation.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-        return pinAnnotation
-        
-        //  custom marker
-        let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "MyMarker")
-        annotationView.markerTintColor = UIColor.blue
-//        return annotationView
+        switch annotation.title {
+        case "my location":
+            let annotationView = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "MyMarker")
+            annotationView.markerTintColor = UIColor.blue
+            return annotationView
+        case "my destination":
+            let annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "droppablePin")
+            annotationView.animatesDrop = true
+            annotationView.pinTintColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+            return annotationView
+        case "my favorite":
+            let annotationView = map.dequeueReusableAnnotationView(withIdentifier: "droppablePin") ?? MKPinAnnotationView()
+            annotationView.image = UIImage(named: "ic_place_2x")
+            annotationView.canShowCallout = true
+            annotationView.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+            return annotationView
+        default:
+            return nil
+        }
     }
     
     //MARK: - callout accessory control tapped
