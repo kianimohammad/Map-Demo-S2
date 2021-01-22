@@ -234,7 +234,7 @@ extension ViewController: MKMapViewDelegate {
             annotationView.pinTintColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
             return annotationView
         case "my favorite":
-            let annotationView = map.dequeueReusableAnnotationView(withIdentifier: "droppablePin") ?? MKPinAnnotationView()
+            let annotationView = map.dequeueReusableAnnotationView(withIdentifier: "customPin") ?? MKPinAnnotationView()
             annotationView.image = UIImage(named: "ic_place_2x")
             annotationView.canShowCallout = true
             annotationView.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
